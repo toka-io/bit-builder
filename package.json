@@ -2,6 +2,7 @@
   "name": "bit-builder",
   "version": "1.0.0",
   "description": "",
+  "main": "BitBuilder.js",
   "bin": {
     "bit-builder": "./index.js"
   },
