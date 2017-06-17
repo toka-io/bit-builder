@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "ramune": "./index.js"
+    "bit-builder": "./index.js"
   },
   "author": "Andy Lim <andytlim@gmail.com>",
   "license": "ISC",
