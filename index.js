@@ -11,5 +11,3 @@ if (fs.existsSync(builderOverride)) {
 }
 else
   require('./default.js');
-
-module.exports = require('./BitBuilder')
