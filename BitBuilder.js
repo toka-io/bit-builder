@@ -21,7 +21,6 @@ class BitBuilder {
     // Recursively search for audio files and add to the playlist
     while (s.length > 0) {
       let dir = s[s.length-1];
-      console.log(dir);
       let files = fs.readdirSync(dir);  
       let end = true;
 
@@ -48,6 +47,7 @@ class BitBuilder {
       // Mark folder as visited
       if (end) m[s.pop()] = true;
     }
+    return fileList;
   }
 }
 
