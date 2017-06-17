@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const appRoot = require('app-root-path');
 const fs = require('fs');
 const path = require('path');
