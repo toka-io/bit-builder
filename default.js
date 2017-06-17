@@ -14,7 +14,7 @@ if (!fs.existsSync(buildDir))
   fs.mkdirSync(buildDir);
 
 /*
- * Copy configuration files to build/config root
+ * Copy configuration files from ./config to ./build/config
  */
-let configDir = path.join(buildDir, 'config');
+let configDir = path.join(appRoot.path, 'config');
 console.log(bitBuilder.findFiles(configDir, ['json']));
