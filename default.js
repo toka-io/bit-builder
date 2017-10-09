@@ -33,3 +33,5 @@ let json = configFiles.map((fpath) => {
 // Create the runtime configuration file in the build folder
 let runtimeConfigFile = path.join(runtimeConfigDir, 'default.json')
 fs.writeFileSync(runtimeConfigFile, JSON.stringify(json, null, 2));
+
+console.info('Build Completed!');
