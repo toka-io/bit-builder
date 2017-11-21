@@ -16,5 +16,22 @@ if (!fs.existsSync(buildDir))
 /*
  * Copy configuration files from ./config to ./build/config
  */
+// Create a runtime configuration directory if it doesn't exist
+let runtimeConfigDir = path.join(buildDir, 'config');
+if (!fs.existsSync(runtimeConfigDir))
+  fs.mkdirSync(runtimeConfigDir);
+
+// Get all configuration files (.json files in /config)
 let configDir = path.join(appRoot.path, 'config');
-console.log(bitBuilder.findFiles(configDir, ['json']));
+let configFiles = bitBuilder.findFiles(configDir, ['json']);
+
+// Read each configuration file and merge all configuration content to one file
+let json = configFiles.map((fpath) => {
+  return JSON.parse(fs.readFileSync(fpath, "utf8"));
+}).reduce((a, i) => merge(a, i), configFiles[0]);
+
+// Create the runtime configuration file in the build folder
+let runtimeConfigFile = path.join(runtimeConfigDir, 'default.json')
+fs.writeFileSync(runtimeConfigFile, JSON.stringify(json, null, 2));
+
+console.info('Build Completed!');
