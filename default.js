@@ -3,7 +3,7 @@ const path = require('path');
 const appRoot = require('app-root-path');
 const merge = require('merge');
 
-const bitBuilder = new (require('./BitBuilder'))();
+const bitBuilder = new (require('./lib/BitBuilder'))();
 
 /** 
  * Create build folder if it doesn't exist 
